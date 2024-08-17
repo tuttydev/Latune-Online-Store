@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Store</title>
-    
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -166,6 +165,74 @@
             padding: 5px 0;
         }
 
+        .blog {
+            background: #f9f9f9;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .blog h2 {
+            margin-top: 0;
+        }
+
+        .blog-post {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .blog-post img {
+            width: 150px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .blog-post-content {
+            flex: 1;
+        }
+
+        .blog-post h3 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .blog-post p {
+            margin: 5px 0 0;
+        }
+
+        .affiliate-marketing {
+            background: #e9ecef;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .affiliate-marketing h2 {
+            margin-top: 0;
+        }
+
+        .affiliate-banner {
+            margin: 10px 0;
+            padding: 10px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .affiliate-banner img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .affiliate-banner p {
+            margin: 10px 0 0;
+        }
+
         footer {
             background: #333;
             color: #fff;
@@ -184,6 +251,16 @@
 
             .hero p {
                 font-size: 1.2rem;
+            }
+
+            .blog-post {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .blog-post img {
+                width: 100%;
+                height: auto;
             }
         }
 
@@ -257,34 +334,150 @@
             <label for="email">Email:</label>
             <input type="email" id="email" required>
             
-            <label for="address">Address:</label>
+            <label for="address">Shipping Address:</label>
             <textarea id="address" required></textarea>
+            
+            <label for="payment">Payment Method:</label>
+            <select id="payment" required>
+                <option value="credit-card">Credit Card</option>
+                <option value="paypal">PayPal</option>
+                <option value="cash-on-delivery">Cash on Delivery</option>
+            </select>
             
             <button type="submit">Confirm Payment</button>
         </form>
     </section>
 
+    <section id="blog">
+        <div class="blog">
+            <h2>Latest News & Updates</h2>
+            <div class="blog-post">
+                <img src="post1.jpg" alt="Blog Post 1">
+                <div class="blog-post-content">
+                    <h3>New Arrivals in Electronics</h3>
+                    <p>Check out the latest gadgets and electronics that have just arrived in our store.</p>
+                </div>
+            </div>
+            <div class="blog-post">
+                <img src="post2.jpg" alt="Blog Post 2">
+                <div class="blog-post-content">
+                    <h3>Summer Fashion Trends</h3>
+                    <p>Stay stylish this summer with our top fashion picks for the season.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="affiliate-marketing">
+        <div class="affiliate-marketing">
+            <h2>Recommended Products</h2>
+            <div class="affiliate-banner">
+                <img src="affiliate1.jpg" alt="Affiliate Product 1">
+                <p>Check out this amazing product from our affiliate partner.</p>
+            </div>
+            <div class="affiliate-banner">
+                <img src="affiliate2.jpg" alt="Affiliate Product 2">
+                <p>Get the best deals on these top-rated items from our affiliate store.</p>
+            </div>
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; tuttydev2024. All Rights Reserved.</p>
+        <p>&copy; 2024 Latune Online Store. All Rights Reserved.</p>
     </footer>
 
     <script>
+        // Sample Products Data
         const products = [
-            { id: 1, name: 'Smartphone', price: 50000, image: 'electronic1.jpeg', category: 'electronics' },
-            { id: 2, name: 'Headphones', price: 15000, image: 'electronic2.jpeg', category: 'electronics' },
-            { id: 3, name: 'Stylish Dress', price: 25000, image: 'fashion1.jpeg', category: 'fashion' },
-            { id: 4, name: 'Leather Jacket', price: 45000, image: 'fashion2.jpeg', category: 'fashion' },
-            { id: 5, name: 'Coffee Maker', price: 12000, image: 'home1.jpeg', category: 'home' },
-            { id: 6, name: 'Blender', price: 8000, image: 'home2.jpeg', category: 'home' },
-            { id: 7, name: 'Toy Car', price: 5000, image: 'toys1.jpeg', category: 'toys' },
-            { id: 8, name: 'Dollhouse', price: 30000, image: 'toys2.jpeg', category: 'toys' }
+            { title: "Gold Wristwatch", category: "electronics", price: "N52000", image: "gold.jpg" },
+            { title: "Flower Mix", category: "food", price: "N2500", image: "mix.jpg" },
+            { title: "Laptop", category: "electronics", price: "N23000", image: "laptop.jpg" },
+            { title: "T-Shirt", category: "fashion", price: "N25000", image: "tshirt.jpg" },
+            { title: " Wristwatch", category: "electronics", price: "N25000", image: "one.jpeg" },
+            { title: "Rug", category: "home", price: "N35,000", image: "rug.jpg" },
+            { title: "Action Figure", category: "toys", price: "N1500", image: "toy.jpg" },
         ];
 
+        const gallery = document.querySelector('.gallery');
+        const galleryLightbox = document.querySelector('.gallery-lightbox');
+        const lightboxImage = galleryLightbox.querySelector('img');
+        const lightboxTitle = galleryLightbox.querySelector('.product-title');
+        const lightboxPrice = galleryLightbox.querySelector('.product-price');
+        const closeBtn = galleryLightbox.querySelector('.close');
+
+        // Function to Render Products in Gallery
+        function renderProducts(category) {
+            gallery.innerHTML = ''; // Clear existing products
+            const filteredProducts = category === 'all' ? products : products.filter(product => product.category === category);
+
+            filteredProducts.forEach(product => {
+                const item = document.createElement('div');
+                item.classList.add('gallery-item');
+                item.innerHTML = `<img src="${product.image}" alt="${product.title}">`;
+                item.addEventListener('click', () => {
+                    lightboxImage.src = product.image;
+                    lightboxTitle.textContent = product.title;
+                    lightboxPrice.textContent = product.price;
+                    galleryLightbox.style.display = 'flex';
+                });
+                gallery.appendChild(item);
+            });
+        }
+
+        // Initialize with All Products
+        renderProducts('all');
+
+        // Filter Products by Category
+        document.querySelectorAll('.category-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                renderProducts(btn.getAttribute('data-category'));
+            });
+        });
+
+        // Close Lightbox
+        closeBtn.addEventListener('click', () => {
+            galleryLightbox.style.display = 'none';
+        });
+
+        // Cart Functionality
+        const cartItemsContainer = document.querySelector('.cart-items');
         let cart = [];
 
-        const gallery = document.querySelector('.gallery');
-        const lightbox = document.querySelector('.gallery-lightbox');
-        const lightboxImg = lightbox.querySelector('img');
-        const lightboxTitle = lightbox.querySelector('.product-title');
-        const lightboxPrice = lightbox.querySelector('.product-price');
-        const close
+        galleryLightbox.querySelector('.add-to-cart').addEventListener('click', () => {
+            const productTitle = lightboxTitle.textContent;
+            const productPrice = lightboxPrice.textContent;
+            const cartItem = cart.find(item => item.title === productTitle);
+
+            if (cartItem) {
+                cartItem.quantity += 1;
+            } else {
+                cart.push({ title: productTitle, price: productPrice, quantity: 1 });
+            }
+
+            updateCart();
+            galleryLightbox.style.display = 'none';
+        });
+
+        function updateCart() {
+            cartItemsContainer.innerHTML = '';
+            cart.forEach(item => {
+                const cartItem = document.createElement('div');
+                cartItem.classList.add('cart-item');
+                cartItem.innerHTML = `
+                    <strong>${item.title}</strong>
+                    <p>${item.price} x ${item.quantity}</p>
+                `;
+                cartItemsContainer.appendChild(cartItem);
+            });
+        }
+
+        // Checkout Form Submission
+        document.getElementById('checkout-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Payment Confirmed! Thank you for your purchase.');
+            cart = [];
+            updateCart();
+        });
+    </script>
+</body>
+</html>
