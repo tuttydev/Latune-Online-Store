@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wristwatch Store</title>
+    <title>Online Store</title>
     
     <style>
         body {
@@ -204,14 +204,14 @@
 </head>
 <body>
     <header>
-        <h1>Latune Watch Hub</h1>
+        <h1>Latune Online Store</h1>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
         <div>
-            <h1>Discover Timeless Elegance</h1>
-            <p>Shop the finest collection of wristwatches</p>
+            <h1>Discover Our Wide Range of Products</h1>
+            <p>Shop the finest selection of items across various categories</p>
             <button class="hero-btn">Shop Now</button>
         </div>
     </section>
@@ -220,9 +220,10 @@
         <h2>Our Collection</h2>
         <div class="category-buttons">
             <button class="category-btn" data-category="all">All</button>
-            <button class="category-btn" data-category="men">Men</button>
-            <button class="category-btn" data-category="women">Women</button>
-            <button class="category-btn" data-category="kids">Kids</button>
+            <button class="category-btn" data-category="electronics">Electronics</button>
+            <button class="category-btn" data-category="fashion">Fashion</button>
+            <button class="category-btn" data-category="home">Home & Kitchen</button>
+            <button class="category-btn" data-category="toys">Toys</button>
         </div>
 
         <div class="gallery">
@@ -230,10 +231,10 @@
         </div>
         <div class="gallery-lightbox">
             <span class="close">&times;</span>
-            <img src="" alt="Selected Watch">
+            <img src="" alt="Selected Product">
             <div class="gallery-info">
-                <h3 class="watch-title"></h3>
-                <p class="watch-price"></p>
+                <h3 class="product-title"></h3>
+                <p class="product-price"></p>
                 <button class="add-to-cart">Add to Cart</button>
             </div>
         </div>
@@ -264,33 +265,19 @@
     </section>
 
     <footer>
-        <p>&copy; tuttydev2022. All Rights Reserved.</p>
+        <p>&copy; tuttydev2024. All Rights Reserved.</p>
     </footer>
 
     <script>
         const products = [
-            { id: 1, name: 'Classic Wristwatch', price: 45000, image: 'm1.jpeg', category: 'men' },
-            { id: 2, name: 'Classic Wristwatch', price: 53000, image: 'm2.jpeg', category: 'men' },
-            { id: 3, name: 'Classic Wristwatch', price: 52000, image: 'm3.jpeg', category: 'men' },
-            { id: 4, name: 'Classic Wristwatch', price: 35000, image: 'm4.jpeg', category: 'men' },
-            { id: 5, name: 'Classic Wristwatch', price: 5000, image: 'm5.jpeg', category: 'men' },
-            { id: 6, name: 'Classic Wristwatch', price: 5000, image: 'm6.jpeg', category: 'men' },
-            { id: 7, name: 'Classic Wristwatch', price: 45000, image: 'm7.jpeg', category: 'men' },
-            { id: 8, name: 'Elegant Wristwatch', price: 25000, image: 'w1.jpeg', category: 'women' },
-            { id: 9, name: 'Elegant Wristwatch', price: 25000, image: 'w2.jpeg', category: 'women' },
-            { id: 10, name: 'Elegant Wristwatch', price: 25000, image: 'w3.jpeg', category: 'women' },
-            { id: 11, name: 'Elegant Wristwatch', price: 28000, image: 'w4.jpeg', category: 'women' },
-             { id: 12, name: 'Elegant Wristwatch', price: 25000, image: 'w5.jpeg', category: 'women' },
-            { id: 13, name: 'Elegant Wristwatch', price: 25000, image: 'w6.jpeg', category: 'women' },
-            { id: 14, name: 'Elegant Wristwatch', price: 25000, image: 'w7.jpeg', category: 'women' },
-            { id: 15, name: 'Elegant Wristwatch', price: 28000, image: 'w8.jpeg', category: 'women' },
-   
-            { id: 16, name: 'Sporty Wristwatch', price: 5000, image: 'k1.jpeg', category: 'kids' },
-            { id: 17, name: 'Sporty Wristwatch', price: 5000, image: 'k2.jpeg', category: 'kids' },
-            { id: 18, name: 'Sporty Wristwatch', price: 10000, image: 'k3.jpeg', category: 'kids' },
-            { id: 19, name: 'Sporty Wristwatch', price: 5000, image: 'k4.jpeg', category: 'kids' },
-            { id: 20, name: 'Sporty Wristwatch', price: 5000, image: 'k5.jpeg', category: 'kids' },
-            { id: 21, name: 'Sporty Wristwatch', price: 5000, image: 'k6.jpeg', category: 'kids' }
+            { id: 1, name: 'Smartphone', price: 50000, image: 'electronic1.jpeg', category: 'electronics' },
+            { id: 2, name: 'Headphones', price: 15000, image: 'electronic2.jpeg', category: 'electronics' },
+            { id: 3, name: 'Stylish Dress', price: 25000, image: 'fashion1.jpeg', category: 'fashion' },
+            { id: 4, name: 'Leather Jacket', price: 45000, image: 'fashion2.jpeg', category: 'fashion' },
+            { id: 5, name: 'Coffee Maker', price: 12000, image: 'home1.jpeg', category: 'home' },
+            { id: 6, name: 'Blender', price: 8000, image: 'home2.jpeg', category: 'home' },
+            { id: 7, name: 'Toy Car', price: 5000, image: 'toys1.jpeg', category: 'toys' },
+            { id: 8, name: 'Dollhouse', price: 30000, image: 'toys2.jpeg', category: 'toys' }
         ];
 
         let cart = [];
@@ -298,68 +285,6 @@
         const gallery = document.querySelector('.gallery');
         const lightbox = document.querySelector('.gallery-lightbox');
         const lightboxImg = lightbox.querySelector('img');
-        const lightboxTitle = lightbox.querySelector('.watch-title');
-        const lightboxPrice = lightbox.querySelector('.watch-price');
-        const closeBtn = lightbox.querySelector('.close');
-        const addToCartBtn = lightbox.querySelector('.add-to-cart');
-        const cartItems = document.querySelector('.cart-items');
-
-        function displayProducts(category) {
-            gallery.innerHTML = '';
-            const filteredProducts = category === 'all' ? products : products.filter(product => product.category === category);
-
-            filteredProducts.forEach(product => {
-                const productCard = document.createElement('div');
-                productCard.classList.add('gallery-item');
-                productCard.innerHTML = `
-                    <img src="${product.image}" alt="${product.name}">
-                `;
-                productCard.addEventListener('click', () => openLightbox(product));
-                gallery.appendChild(productCard);
-            });
-        }
-
-        function openLightbox(product) {
-            lightboxImg.src = product.image;
-            lightboxTitle.textContent = product.name;
-            lightboxPrice.textContent = `₦${product.price.toLocaleString()}`;
-            lightbox.style.display = 'flex';
-            addToCartBtn.onclick = () => addToCart(product);
-        }
-
-        closeBtn.addEventListener('click', () => {
-            lightbox.style.display = 'none';
-        });
-
-        function addToCart(product) {
-            cart.push(product);
-            updateCart();
-            lightbox.style.display = 'none';
-        }
-
-        function updateCart() {
-            cartItems.innerHTML = '';
-            cart.forEach(item => {
-                const cartItem = document.createElement('div');
-                cartItem.classList.add('cart-item');
-                cartItem.innerHTML = `
-                    ${item.name} - ₦${item.price.toLocaleString()}
-                `;
-                cartItems.appendChild(cartItem);
-            });
-        }
-
-        document.querySelectorAll('.category-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                displayProducts(e.target.dataset.category);
-            });
-        });
-
-        document.getElementById('checkout-btn').addEventListener('click', () => {
-            alert('Proceeding to checkout!');
-        });
-
-        displayProducts('all');
-    </script>
-</body>
-</html>
+        const lightboxTitle = lightbox.querySelector('.product-title');
+        const lightboxPrice = lightbox.querySelector('.product-price');
+        const close
