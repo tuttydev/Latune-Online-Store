@@ -1,11 +1,12 @@
 /* General Styles */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     background-color: black;
-    color: black;
+    color: grey;
 }
 
 header {
@@ -52,27 +53,64 @@ h2 {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    padding: 60px 20px;
-    background-color: green;
-;
+    padding: 40px 20px;
+    background-color: teal;
+    color: #fff;
 }
 
 .hero-content {
-    max-width: 50%;
+    flex: 1;
+    max-width: 600px;
+    margin-right: 20px;
 }
 
 .hero-content h2 {
     font-size: 2.5em;
     margin-bottom: 20px;
+    font-weight: bold;
+    line-height: 1.2;
+    color: #fff;
 }
 
 .hero-content p {
     font-size: 1.2em;
     margin-bottom: 30px;
+    line-height: 1.5;
+    color: #f0f0f0;
+}
+
+.hero-image {
+    flex: 1;
+    max-width: 600px;
 }
 
 .hero-image img {
-    max-width: 100%;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Media Query for Mobile View */
+@media (max-width: 768px) {
+    #hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .hero-image {
+        max-width: 100%;
+    }
+
+    .hero-image img {
+        border-radius: 5px;
+    }
 }
 
 .btn {
@@ -88,7 +126,7 @@ h2 {
 }
 
 /* Categories Section */
-#categories .category-grid {
+.category-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -112,7 +150,7 @@ h2 {
 }
 
 /* Featured Products Section */
-#featured .featured-products {
+.featured-products {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -139,86 +177,46 @@ h2 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Carousel Section */
-#carousel {
-    position: relative;
-}
 
-.carousel-container {
-    overflow: hidden;
-}
-
-.carousel-slide {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-slide img {
-    width: 100%;
-    flex-shrink: 0;
-}
-
-.carousel-controls {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-}
-
-.carousel-controls button {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-}
-
-.carousel-controls button:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-}
 
 /* Gallery Section */
-#gallery .category-filters {
+.category-filters {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
-#gallery .category-filters button {
+.category-filters button {
     background-color: #333;
     color: #fff;
     border: none;
     padding: 10px 20px;
     margin: 5px;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 3px;
 }
 
-#gallery .category-filters button.active {
-    background-color: #555;
-}
 
-#gallery .gallery-container {
+
+.gallery-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
 }
 
-#gallery .gallery-item {
+gallery .gallery-item {
     flex: 1 1 200px;
     margin: 10px;
     display: none;
 }
 
-#gallery .gallery-item img {
+.gallery-item img {
     max-width: 100%;
     border-radius: 10px;
 }
 
 /* Testimonials Section */
-#testimonials {
+testimonials {
     background-color: #f8f8f8;
     padding: 60px 20px;
 }
@@ -240,7 +238,7 @@ h2 {
 }
 
 /* Contact Section */
-#contact .form-group {
+.form-group {
     margin-bottom: 20px;
 }
 
@@ -249,14 +247,14 @@ h2 {
     margin-bottom: 5px;
 }
 
-#contact input, #contact textarea {
+contact input, contact textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-#contact button {
+contact button {
     display: block;
     margin: 0 auto;
     background-color: #333;
@@ -308,7 +306,7 @@ footer .social-links li a:hover {
         text-align: center;
     }
 
-    .hero-content {
+ .hero-content {
         max-width: 100%;
         text-align: center;
     }
@@ -317,7 +315,7 @@ footer .social-links li a:hover {
         display: none;
     }
 
-    #hero {
+hero {
         text-align: center;
     }
 
@@ -326,14 +324,8 @@ footer .social-links li a:hover {
         gap: 10px;
     }
 
-    #categories .category-grid,
-    #featured .featured-products,
-    #gallery .gallery-container,
-    .testimonials-container {
+
+ .carousel-slide {
         flex-direction: column;
     }
 
-    #carousel .carousel-slide {
-        flex-direction: column;
-    }
-}
