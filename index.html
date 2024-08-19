@@ -3,482 +3,199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Store</title>
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: cream;
-        }
-
-        header {
-            background: #333;
-            color: #fff;
-            padding: 15px 20px;
-            text-align: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 24px;
-        }
-
-        .hero {
-            position: relative;
-            height: 70vh;
-            background-image: url('hero.jpeg');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            text-align: center;
-            padding-top: 80px;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin: 0;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            margin-top: 10px;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
-        }
-
-        .hero .hero-btn {
-            margin-top: 20px;
-            padding: 10px 30px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .hero .hero-btn:hover {
-            background-color: #0056b3;
-        }
-
-        section {
-            padding: 20px;
-            margin: 20px;
-        }
-
-        .category-buttons {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .category-btn {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            margin: 5px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .category-btn:hover {
-            background-color: #0056b3;
-        }
-
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-        }
-
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.05);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: auto;
-            transition: opacity 0.3s ease;
-        }
-
-        .gallery-lightbox {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            text-align: center;
-            color: #fff;
-            z-index: 1000;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
-        .gallery-lightbox img {
-            max-width: 90%;
-            max-height: 70%;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-
-        .gallery-info {
-            margin-top: 20px;
-        }
-
-        .close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 30px;
-            cursor: pointer;
-        }
-
-        .cart-items {
-            margin-bottom: 20px;
-            padding-top: 80px;
-        }
-
-        .cart-item {
-            border-bottom: 1px solid #ddd;
-            padding: 5px 0;
-        }
-
-        .blog {
-            background: #f9f9f9;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 8px;
-        }
-
-        .blog h2 {
-            margin-top: 0;
-        }
-
-        .blog-post {
-            margin-bottom: 20px;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 10px;
-            display: flex;
-            gap: 20px;
-        }
-
-        .blog-post img {
-            width: 150px;
-            height: 100px;
-            object-fit: cover;
-            border-radius: 8px;
-        }
-
-        .blog-post-content {
-            flex: 1;
-        }
-
-        .blog-post h3 {
-            margin: 0;
-            font-size: 1.5rem;
-        }
-
-        .blog-post p {
-            margin: 5px 0 0;
-        }
-
-        .affiliate-marketing {
-            background: #e9ecef;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-            text-align: center;
-        }
-
-        .affiliate-marketing h2 {
-            margin-top: 0;
-        }
-
-        .affiliate-banner {
-            margin: 10px 0;
-            padding: 10px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .affiliate-banner img {
-            max-width: 100%;
-            border-radius: 8px;
-        }
-
-        .affiliate-banner p {
-            margin: 10px 0 0;
-        }
-
-        footer {
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-        }
-
-        @media (max-width: 768px) {
-            .gallery {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1.2rem;
-            }
-
-            .blog-post {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .blog-post img {
-                width: 100%;
-                height: auto;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .gallery {
-                grid-template-columns: 1fr;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-        }
-    </style>
+    <title>Latune Online Store</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Header Section -->
     <header>
-        <h1>Latune Online Store</h1>
+        <div class="logo">
+            <h1>Latune Online Store</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#featured">Featured</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div>
-            <h1>Discover Our Wide Range of Products</h1>
-            <p>Shop the finest selection of items across various categories</p>
-            <button class="hero-btn">Shop Now</button>
+    <section id="hero">
+        <div class="hero-content">
+            <h2>Discover a World of Variety</h2>
+            <p>Find the perfect product from our wide range of categories, carefully curated for you.</p>
+            <a href="#categories" class="btn">Shop Now</a>
+        </div>
+        <div class="hero-image">
+            <img src="hero.jpeg?text=Hero+Image" alt="Hero Image">
         </div>
     </section>
 
-    <section id="products">
-        <h2>Our Collection</h2>
-        <div class="category-buttons">
-            <button class="category-btn" data-category="all">All</button>
-            <button class="category-btn" data-category="electronics">Electronics</button>
-            <button class="category-btn" data-category="fashion">Fashion</button>
-            <button class="category-btn" data-category="home">Home & Kitchen</button>
-            <button class="category-btn" data-category="toys">Toys</button>
-            <button class="category-btn" data-category="food">Food</button>
-        </div>
-
-        <div class="gallery">
-            <!-- Dynamic Product Cards will be injected here by JavaScript -->
-        </div>
-        <div class="gallery-lightbox">
-            <span class="close">&times;</span>
-            <img src="" alt="Selected Product">
-            <div class="gallery-info">
-                <h3 class="product-title"></h3>
-                <p class="product-price"></p>
-                <button class="add-to-cart">Add to Cart</button>
+    <!-- Categories Section -->
+    <section id="categories" class="section-padding">
+        <h2>Shop by Categories</h2>
+        <div class="category-grid">
+            <div class="category-item">
+                <img src="mot.jpeg?text=Category+1" alt="Category 1">
+                <h3>Wristwatches</h3>
+            </div>
+            <div class="category-item">
+                <img src="mot.jpeg?text=Category+2" alt="Category 2">
+                <h3>Jewelry</h3>
+            </div>
+            <div class="category-item">
+                <img src="mot.jpeg?text=Category+3" alt="Category 3">
+                <h3>Accessories</h3>
+            </div>
+            <div class="category-item">
+                <img src="mot.jpeg?text=Category+4" alt="Category 4">
+                <h3>Footwear</h3>
             </div>
         </div>
     </section>
 
-    <section id="cart">
-        <h2>Your Cart</h2>
-        <div class="cart-items">
-            <!-- Dynamic Cart Items will be injected here by JavaScript -->
+    <!-- Featured Products Section -->
+    <section id="featured" class="section-padding">
+        <h2>Featured Products</h2>
+        <div class="featured-products">
+            <div class="product-card">
+                <img src="mot.jpeg?text=Product+1" alt="Product 1">
+                <h3>Luxury Wristwatch</h3>
+                <p>$250.00</p>
+                <a href="#" class="btn">Buy Now</a>
+            </div>
+            <div class="product-card">
+                <img src="mot.jpeg?text=Product+2" alt="Product 2">
+                <h3>Gold Necklace</h3>
+                <p>$150.00</p>
+                <a href="#" class="btn">Buy Now</a>
+            </div>
+            <div class="product-card">
+                <img src="mot.jpeg?text=Product+3" alt="Product 3">
+                <h3>Stylish Sunglasses</h3>
+                <p>$75.00</p>
+                <a href="#" class="btn">Buy Now</a>
+            </div>
+            <div class="product-card">
+                <img src="mot.jpeg?text=Product+4" alt="Product 4">
+                <h3>Leather Boots</h3>
+                <p>$180.00</p>
+                <a href="#" class="btn">Buy Now</a>
+            </div>
         </div>
-        <button id="checkout-btn">Proceed to Checkout</button>
     </section>
 
-    <section id="checkout">
-        <h2>Checkout</h2>
-        <form id="checkout-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" required>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" required>
-            
-            <label for="address">Shipping Address:</label>
-            <textarea id="address" required></textarea>
-            
-            <label for="payment">Payment Method:</label>
-            <select id="payment" required>
-                <option value="credit-card">Credit Card</option>
-                <option value="paypal">PayPal</option>
-                <option value="cash-on-delivery">Cash on Delivery</option>
-            </select>
-            
-            <button type="submit">Confirm Payment</button>
+    <!-- Carousel Section -->
+    <section id="carousel" class="section-padding">
+        <h2>Special Offers</h2>
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <img src="mot.jpeg?text=Offer+1" alt="Offer 1">
+            </div>
+            <div class="carousel-slide">
+                <img src="mot.jpeg?text=Offer+2" alt="Offer 2">
+            </div>
+            <div class="carousel-slide">
+                <img src="mot.jpeg?text=Offer+3" alt="Offer 3">
+            </div>
+        </div>
+        <div class="carousel-controls">
+            <button id="prev">&#10094;</button>
+            <button id="next">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section-padding">
+        <h2>Our Collections</h2>
+        <div class="category-filters">
+            <button data-category="all">All</button>
+            <button data-category="wristwatches">Wristwatches</button>
+            <button data-category="jewelry">Jewelry</button>
+            <button data-category="accessories">Accessories</button>
+            <button data-category="footwear">Footwear</button>
+        </div>
+        <div class="gallery-container">
+            <div class="gallery-item" data-category="wristwatches">
+                <img src="mot.jpeg?text=Wristwatch+1" alt="Wristwatch 1">
+            </div>
+            <div class="gallery-item" data-category="jewelry">
+                <img src="mot.jpeg??text=Jewelry+1" alt="Jewelry 1">
+            </div>
+            <div class="gallery-item" data-category="accessories">
+                <img src="mot.jpeg?text=Accessory+1" alt="Accessory 1">
+            </div>
+            <div class="gallery-item" data-category="footwear">
+                <img src="mot.jpeg??text=Footwear+1" alt="Footwear 1">
+            </div>
+            <div class="gallery-item" data-category="wristwatches">
+                <img src="mot.jpeg?text=Wristwatch+2" alt="Wristwatch 2">
+            </div>
+            <div class="gallery-item" data-category="jewelry">
+                <img src="mot.jpeg?text=Jewelry+2" alt="Jewelry 2">
+            </div>
+            <div class="gallery-item" data-category="accessories">
+                <img src="mot.jpeg?text=Accessory+2" alt="Accessory 2">
+            </div>
+            <div class="gallery-item" data-category="footwear">
+                <img src="mot.jpeg?text=Footwear+2" alt="Footwear 2">
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section-padding">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonials-container">
+            <div class="testimonial">
+                <p>"Amazing collection! I found exactly what I was looking for."</p>
+                <span>- Customer 1</span>
+            </div>
+            <div class="testimonial">
+                <p>"High-quality products and fast shipping. Highly recommended!"</p>
+                <span>- Customer 2</span>
+            </div>
+            <div class="testimonial">
+                <p>"Great variety and excellent customer service."</p>
+                <span>- Customer 3</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding">
+        <h2>Contact Us</h2>
+        <form>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="btn">Send Message</button>
         </form>
     </section>
 
-    <section id="blog">
-        <div class="blog">
-            <h2>Latest News & Updates</h2>
-            <div class="blog-post">
-                <img src="post1.jpg" alt="Blog Post 1">
-                <div class="blog-post-content">
-                    <h3>New Arrivals in Electronics</h3>
-                    <p>Check out the latest gadgets and electronics that have just arrived in our store.</p>
-                </div>
-            </div>
-            <div class="blog-post">
-                <img src="post2.jpg" alt="Blog Post 2">
-                <div class="blog-post-content">
-                    <h3>Summer Fashion Trends</h3>
-                    <p>Stay stylish this summer with our top fashion picks for the season.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="affiliate-marketing">
-        <div class="affiliate-marketing">
-            <h2>Recommended Products</h2>
-            <div class="affiliate-banner">
-                <img src="affiliate1.jpg" alt="Affiliate Product 1">
-                <p>Check out this amazing product from our affiliate partner.</p>
-            </div>
-            <div class="affiliate-banner">
-                <img src="affiliate2.jpg" alt="Affiliate Product 2">
-                <p>Get the best deals on these top-rated items from our affiliate store.</p>
-            </div>
-        </div>
-    </section>
-
+    <!-- Footer Section -->
     <footer>
-        <p>&copy; 2024 Latune Online Store. All Rights Reserved.</p>
+        <p>&copy; 2024 Exclusive Varieties Store. All rights reserved.</p>
+        <ul class="social-links">
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Twitter</a></li>
+        </ul>
     </footer>
 
-    <script>
-        // Sample Products Data
-        const products = [
-            { title: "Gold Wristwatch", category: "electronics", price: "N52000", image: "gold.jpg" },
-            { title: "Flower Mix", category: "food", price: "N2500", image: "mix.jpg" },
-       
-          
-            { title: " Wristwatch", category: "electronics", price: "N25000", image: "one.jpeg" },
-            { title: "Rug", category: "home", price: "N35,000", image: "rug.jpg" },
-            
-        ];
-
-        const gallery = document.querySelector('.gallery');
-        const galleryLightbox = document.querySelector('.gallery-lightbox');
-        const lightboxImage = galleryLightbox.querySelector('img');
-        const lightboxTitle = galleryLightbox.querySelector('.product-title');
-        const lightboxPrice = galleryLightbox.querySelector('.product-price');
-        const closeBtn = galleryLightbox.querySelector('.close');
-
-        // Function to Render Products in Gallery
-        function renderProducts(category) {
-            gallery.innerHTML = ''; // Clear existing products
-            const filteredProducts = category === 'all' ? products : products.filter(product => product.category === category);
-
-            filteredProducts.forEach(product => {
-                const item = document.createElement('div');
-                item.classList.add('gallery-item');
-                item.innerHTML = `<img src="${product.image}" alt="${product.title}">`;
-                item.addEventListener('click', () => {
-                    lightboxImage.src = product.image;
-                    lightboxTitle.textContent = product.title;
-                    lightboxPrice.textContent = product.price;
-                    galleryLightbox.style.display = 'flex';
-                });
-                gallery.appendChild(item);
-            });
-        }
-
-        // Initialize with All Products
-        renderProducts('all');
-
-        // Filter Products by Category
-        document.querySelectorAll('.category-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                renderProducts(btn.getAttribute('data-category'));
-            });
-        });
-
-        // Close Lightbox
-        closeBtn.addEventListener('click', () => {
-            galleryLightbox.style.display = 'none';
-        });
-
-        // Cart Functionality
-        const cartItemsContainer = document.querySelector('.cart-items');
-        let cart = [];
-
-        galleryLightbox.querySelector('.add-to-cart').addEventListener('click', () => {
-            const productTitle = lightboxTitle.textContent;
-            const productPrice = lightboxPrice.textContent;
-            const cartItem = cart.find(item => item.title === productTitle);
-
-            if (cartItem) {
-                cartItem.quantity += 1;
-            } else {
-                cart.push({ title: productTitle, price: productPrice, quantity: 1 });
-            }
-
-            updateCart();
-            galleryLightbox.style.display = 'none';
-        });
-
-        function updateCart() {
-            cartItemsContainer.innerHTML = '';
-            cart.forEach(item => {
-                const cartItem = document.createElement('div');
-                cartItem.classList.add('cart-item');
-                cartItem.innerHTML = `
-                    <strong>${item.title}</strong>
-                    <p>${item.price} x ${item.quantity}</p>
-                `;
-                cartItemsContainer.appendChild(cartItem);
-            });
-        }
-
-        // Checkout Form Submission
-        document.getElementById('checkout-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Payment Confirmed! Thank you for your purchase.');
-            cart = [];
-            updateCart();
-        });
-    </script>
+    <script src="scripts.js"></script>
 </body>
 </html>
