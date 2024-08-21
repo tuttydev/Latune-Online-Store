@@ -1,96 +1,151 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Latune Online Store</title>
+    
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
 
+<body>
     <!-- Header Section -->
-    <header>
-        <div class="logo">
-            <h1>Latune Online Store</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#categories">Categories</a></li>
-                <li><a href="#featured">Featured</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+    <header class="bg-primary text-white">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center py-3">
+                <div class="logo">
+                    <h1>Latune Online Store</h1>
+                </div>
+                <nav>
+                    <ul class="nav">
+                        <li class="nav-item"><a href="#home" class="nav-link text-white">Home</a></li>
+                        <li class="nav-item"><a href="#categories" class="nav-link text-white">Categories</a></li>
+                        <li class="nav-item"><a href="#featured" class="nav-link text-white">Featured</a></li>
+                        <li class="nav-item"><a href="#gallery" class="nav-link text-white">Gallery</a></li>
+                        <li class="nav-item"><a href="#contact" class="nav-link text-white">Contact</a></li>
+                    </ul>
+                </nav>
+      
     </header>
 
     <!-- Hero Section -->
-    <section id="hero">
-        <div class="hero-content">
+    <section id="hero" class="text-center text-white">
+        <div class="hero-content py-5">
             <h2>Discover a World of Variety</h2>
             <p>Find the perfect product from our wide range of categories, carefully curated for you.</p>
-            <a href="#categories" class="btn">Shop Now</a>
+            <a href="#categories" class="btn btn-light btn-lg">Shop Now</a>
         </div>
         <div class="hero-image">
-            <img src="hero.jpeg" alt="Hero Image">
+            <img src="hero.jpeg" alt="Hero Image" class="img-fluid">
         </div>
     </section>
 
     <!-- Categories Section -->
-    <section id="categories" class="section-padding">
+    <section id="categories" class="section-padding text-center">
         <h2>Shop by Categories</h2>
-        <div class="category-grid">
-            <div class="category-item">
-                <img src="mot.jpeg" alt="Wristwatches">
+        <div class="category-grid row">
+            <div class="category-item col-md-3">
+                <img src="mot.jpeg" alt="Wristwatches" class="img-fluid">
                 <h3>Wristwatches</h3>
             </div>
-            <div class="category-item">
-                <img src="neck.png" alt="Jewelry">
+            <div class="category-item col-md-3">
+                <img src="neck.png" alt="Jewelry" class="img-fluid">
                 <h3>Jewelry</h3>
             </div>
-            <div class="category-item">
-                <img src="vase.jpg" alt="Accessories">
+            <div class="category-item col-md-3">
+                <img src="vase.jpg" alt="Accessories" class="img-fluid">
                 <h3>Accessories</h3>
             </div>
-            <div class="category-item">
-                <img src="shoe.jpeg" alt="Footwear">
+            <div class="category-item col-md-3">
+                <img src="sh.png" alt="Footwear" class="img-fluid">
                 <h3>Footwear</h3>
             </div>
         </div>
     </section>
+   <br>
+   <br>
+
+
+
+
+   <div class="carousel">
+                              
+
+		 <div class="carousel">
+                              
+		<div class="carousel-control-button left"><input type="radio" name="carousel-control-input"></div>
+		<div class="carousel-control-button right"><input type="radio" name="carousel-control-input" checked></div>
+
+		<div class="carousel-rotation-direction">
+
+				<ul class="carousel-item-wrapper" style="--_num-elements: 11">
+
+						<li class="carousel-item" style="--_index: 1; --_image-url: url('m2.jpeg?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"><a href="https://tuttydev.github.io/Latune-Online-Store"></a></li>
+
+						<li class="carousel-item" style="--_index: 2; --_image-url: url('mix.jpg?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"><a href="https://tuttydev.github.io/Latune-Online-Store"></a></li>
+						<li class="carousel-item" style="--_index: 3; --_image-url: url('shoe.jpeg?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"><a href="https://tuttydev.github.io/Latune-Online-Store"></a></li>
+						<li class="carousel-item" style="--_index: 4; --_image-url: url('rug.jpg?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"><a href="https://tuttydev.github.io/Latune-Online-Store"></a></li>
+
+						<li class="carousel-item" style="--_index: 5; --_image-url: url('inu.png?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"><a href="https://tuttydev.github.io/Latune-Online-Store"></a></li>
+
+						<li class="carousel-item" style="--_index: 6; --_image-url: url('m4.jpeg?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"><a href="https://tuttydev.github.io/Latune-Online-Store"></a></li>
+
+						<li class="carousel-item" style="--_index: 7; --_image-url: url('ub.jpg?q=80&w=2030&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"><a href="https://tuttydev.github.io/Latune-Online-Store"></a></li>
+
+						<li class="carousel-item" style="--_index: 8; --_image-url: url('sm1.jpg?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"><a href="https://tuttydev.github.io/Latune-Online-Store"></a></li>
+
+						<li class="carousel-item" style="--_index: 9; --_image-url: url('sh.png?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"><a href="https://tuttydev.github.io/Latune-Online-Store"></a></li>
+
+						<li class="carousel-item" style="--_index: 10; --_image-url: url('w2.jpeg?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"><a href="https://tuttydev.github.io/Latune-Online-Store"></a></li>
+
+                                                                                                         <li class="carousel-item" style="--_index: 11; --_image-url: url('1.jpeg?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"><a href="https://tuttydev.github.io/Latune-Online-Store"></a></li>
+						
+
+						<li class="carousel-ground"></li>
+
+				</ul>
+
+		</div>
+
+</div>
+
+
+
+
+
+
 
     <!-- Featured Products Section -->
-    <section id="featured" class="section-padding">
+    <section id="featured" class="section-padding text-center">
         <h2>Featured Products</h2>
-        <div class="featured-products">
-            <div class="product-card">
-                <img src="mot.jpeg" alt="Luxury Wristwatch">
+        <div class="featured-products row">
+            <div class="product-card col-md-3">
+                <img src="r1.jpg" alt="Luxury Wristwatch" class="img-fluid">
                 <h3>Luxury Wristwatch</h3>
-                <p>$250.00</p>
-                <a href="#" class="btn">Buy Now</a>
+                <p>N250.00</p>
+                <a href="#" class="btn btn-primary">Buy Now</a>
             </div>
-            <div class="product-card">
-                <img src="mot.jpeg" alt="Gold Necklace">
+            <div class="product-card col-md-3">
+                <img src="r2.jpg" alt="Gold Necklace" class="img-fluid">
                 <h3>Gold Necklace</h3>
-                <p>$150.00</p>
-                <a href="#" class="btn">Buy Now</a>
+                <p>N150.00</p>
+                <a href="#" class="btn btn-primary">Buy Now</a>
             </div>
-            <div class="product-card">
-                <img src="mot.jpeg" alt="Stylish Sunglasses">
+            <div class="product-card col-md-3">
+                <img src="r3.jpg" alt="Stylish Sunglasses" class="img-fluid">
                 <h3>Stylish Sunglasses</h3>
-                <p>$75.00</p>
-                <a href="#" class="btn">Buy Now</a>
+                <p>N75.00</p>
+                <a href="#" class="btn btn-primary">Buy Now</a>
             </div>
-            <div class="product-card">
-                <img src="mot.jpeg" alt="Leather Boots">
+            <div class="product-card col-md-3">
+                <img src="r4.jpg" alt="Leather Boots" class="img-fluid">
                 <h3>Leather Boots</h3>
-                <p>$180.00</p>
-                <a href="#" class="btn">Buy Now</a>
+                <p>N180.00</p>
+                <a href="#" class="btn btn-primary">Buy Now</a>
             </div>
         </div>
     </section>
-
- 
 
     <!-- Gallery Section -->
     <section id="gallery" class="section-padding">
@@ -127,6 +182,9 @@
             <div class="gallery-item" data-category="footwear">
                 <img src="1.jpeg" alt="Footwear 2">
             </div>
+            <div class="gallery-item" data-category="footwear">
+                <img src="1.jpeg" alt="Footwear 2">
+            </div>
         </div>
     </section>
 
@@ -149,36 +207,43 @@
         </div>
     </section>
 
+
     <!-- Contact Section -->
     <section id="contact" class="section-padding">
         <h2>Contact Us</h2>
         <form>
             <div class="form-group">
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" class="form-control" required>
             </div>
             <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" class="form-control" required>
             </div>
             <div class="form-group">
                 <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
+                <textarea id="message" name="message" class="form-control" rows="4" required></textarea>
             </div>
-            <button type="submit" class="btn">Send Message</button>
+            <button type="submit" class="btn btn-primary">Send Message</button>
         </form>
     </section>
 
     <!-- Footer Section -->
-    <footer>
-        <p>&copy; Designed by tuttydev2024. All rights reserved.</p>
-        <ul class="social-links">
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">Twitter</a></li>
+    <footer class="bg-primary text-white text-center py-3">
+        <p>&copy; 2024 Designed by: tuttydev2024. All rights reserved.</p>
+        <ul class="social-links list-unstyled">
+            <li><a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#" class="text-white"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="#" class="text-white"><i class="fab fa-twitter"></i></a></li>
         </ul>
     </footer>
 
+    <!-- Bootstrap and jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Custom JS -->
     <script src="scripts.js"></script>
+
 </body>
 </html>
