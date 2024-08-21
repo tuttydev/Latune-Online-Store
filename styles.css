@@ -1,65 +1,82 @@
-Here's a cleaner and structured version of your CSS that emphasizes readability and maintains your styling choices. I've also taken the liberty to fix the small error in the `header` styles (changed `align-items: justify;` to `align-items: center;`):
 
-```css
+    <style>
+        /*
+vars
+*/
+
+
+
+
 /* Reset and Base Styles */
-
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-
-
-
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: black;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: black;
     color: grey;
-    align-items: center; /* Changed from 'justify' to 'center' */
-    display: grid;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+
+  /* Mobile-friendly font size */
+  font-size: 16px;
+
+  /* Ensure responsiveness for different screen sizes */
+  @media (max-width: 768px) {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 12px;
+  }
 }
 
+/* Header */
 header {
-    background-color: black;
-    color: grey;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Changed from 'justify' to 'center' */
+  padding: 20px;
+  background-color: black;
+  color: #fff;
+  width: 100%; /* Ensures the header takes the full width */
+  position: absolute; /* Ensures it stays at the top */
+  top: 0; /* Positions the header at the top */
+  left: 0; /* Aligns the header with the left edge */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow for visual separation */
+  z-index: 1000; /* Ensures the header stays above other content */
 }
 
-header h1 {
-    margin: 0;
+header .logo h1 {
+  font-size: 1.8rem;
 }
 
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
 
-nav ul li {
-    margin-left: 20px;
-}
+  li {
+    a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
 
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.section-padding {
-    padding: 60px 20px;
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 40px;
+      &:hover {
+        color: #ff6347;
+      }
+    }
+  }
 }
 
 /* Hero Section */
@@ -348,6 +365,13 @@ footer {
     justify-content: center;
     gap: 20px;
 
+    @media (max-width: 480px) {
+  .social-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
     li {
       a {
         text-decoration: none;
@@ -369,14 +393,26 @@ footer {
     gap: 15px;
   }
 
-  #hero {
-    flex-direction: column;
-    text-align: center;
-    padding: 30px;
+  header nav ul li a {
+    font-size: 1rem;
+  }
 
-    .hero-content {
-      max-width: 100%;
-    }
+  .section-padding {
+    padding: 40px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .section-padding {
+    padding: 30px 10px;
   }
 }
 
@@ -387,9 +423,10 @@ footer {
 
 
 
- /*
-vars
-*/
+
+
+
+
 :root {
 		--carousel-transition-duration: 250ms;
 		--carousel-transition-ease: ease-out;
@@ -437,7 +474,14 @@ a {
 		user-select: none;
 }
 
-
+carousel.body {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100vh;
+		background-color: rgb(var(--carousel-bg-color-rgb));
+		overflow: hidden;
+}
 
 /*
 carousel
@@ -658,3 +702,26 @@ carousel
 .carousel .carousel-item-wrapper:has(.carousel-item:hover) .carousel-ground {
 		opacity: 0.75;
 }
+
+
+
+
+/* Carousel Adjustments */
+@media only screen and (max-width: 768px) {
+  .carousel {
+    --_diameter: calc(var(--carousel-diameter) * 0.75);
+    --_item-width: calc(var(--carousel-item-width) * 0.75);
+    --_item-height: calc(var(--carousel-item-height) * 0.75);
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .carousel {
+    --_diameter: calc(var(--carousel-diameter) * 0.6);
+    --_item-width: calc(var(--carousel-item-width) * 0.6);
+    --_item-height: calc(var(--carousel-item-height) * 0.6);
+  }
+}
+    </style>
+
+    
