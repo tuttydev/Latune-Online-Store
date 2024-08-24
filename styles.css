@@ -17,7 +17,7 @@ vars
 body {
   font-family: 'Arial', sans-serif;
   line-height: 1.6;
-  background-color: black;
+  background-color:black;
     color: grey;
   min-height: 100vh;
   display: grid;
@@ -46,18 +46,18 @@ header {
   justify-content: space-between;
   align-items: center; /* Changed from 'justify' to 'center' */
   padding: 20px;
-  background-color: black;
-  color: #fff;
+  background-color:  teal   ;
+  color:black ;
   width: 100%; /* Ensures the header takes the full width */
   position: absolute; /* Ensures it stays at the top */
   top: 0; /* Positions the header at the top */
   left: 0; /* Aligns the header with the left edge */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow for visual separation */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optional: Adds a subtle shadow for visual separation */
   z-index: 1000; /* Ensures the header stays above other content */
 }
 
 header .logo h1 {
-  font-size: 1.8rem;
+  font-size: 2.2rem;
 }
 
 header nav ul {
@@ -68,7 +68,7 @@ header nav ul {
   li {
     a {
       text-decoration: none;
-      color: #fff;
+      color: #E6E6FA ;
       font-size: 1.1rem;
       transition: color 0.3s ease;
 
@@ -238,7 +238,7 @@ header nav ul {
   .category-filters {
     display: flex;
     justify-content: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 
     button {
       background-color: #ff6347;
@@ -285,7 +285,7 @@ header nav ul {
     gap: 20px;
 
     .testimonial {
-      background-color: gold;
+      background-color: white;
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
