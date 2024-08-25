@@ -85,7 +85,7 @@ header nav ul {
   align-items: center;
   justify-content: space-between;
   padding: 50px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('hero.jpg') center/cover no-repeat;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('heros.png') center/cover no-repeat;
   color: #fff;
 
   .hero-content {
