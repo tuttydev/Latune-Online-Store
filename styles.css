@@ -46,13 +46,13 @@ header {
   justify-content: space-between;
   align-items: center; /* Changed from 'justify' to 'center' */
   padding: 20px;
-  background-color:  teal   ;
-  color:black ;
+  background-color:   ;
+  color:grey ;
   width: 100%; /* Ensures the header takes the full width */
   position: absolute; /* Ensures it stays at the top */
   top: 0; /* Positions the header at the top */
   left: 0; /* Aligns the header with the left edge */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optional: Adds a subtle shadow for visual separation */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Optional: Adds a subtle shadow for visual separation */
   z-index: 1000; /* Ensures the header stays above other content */
 }
 
@@ -73,7 +73,7 @@ header nav ul {
       transition: color 0.3s ease;
 
       &:hover {
-        color: #ff6347;
+        color: yellow;
       }
     }
   }
@@ -86,7 +86,7 @@ header nav ul {
   justify-content: space-between;
   padding: 50px;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('heros.png') center/cover no-repeat;
-  color: #fff;
+  color: grey;
 
   .hero-content {
     max-width: 50%;
